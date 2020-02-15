@@ -1,0 +1,16 @@
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.exe.config
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.exe
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.pdb
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.Design.dll
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.dll
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.Fonts.dll
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Properties.Resources.resources
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.csproj.GenerateResource.Cache
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.exe
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.pdb
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.LoginForm.resources
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.DashboardForm.resources
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.DefineProductScreen.resources
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.csprojResolveAssemblyReference.cache
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.ManageProduct.resources
+D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.ManageBrand_Category.resources
