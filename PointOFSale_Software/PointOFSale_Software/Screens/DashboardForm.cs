@@ -39,5 +39,17 @@ namespace PointOFSale_Software.Screens
             ManageBrand_Category mbc = new ManageBrand_Category();
             mbc.Show();
         }
+
+        private void StockManagementBTN_Click(object sender, EventArgs e)
+        {
+            StockManagement stkm = new StockManagement();
+            stkm.Show();
+        }
+
+        private void ChangePasswordBTN_Click(object sender, EventArgs e)
+        {
+            ChangePassword chgpass = new ChangePassword();
+            chgpass.Show();
+        }
     }
 }

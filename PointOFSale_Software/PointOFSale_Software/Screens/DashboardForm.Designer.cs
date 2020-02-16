@@ -117,6 +117,7 @@
             this.ChangePasswordBTN.Text = "Change Password";
             this.ChangePasswordBTN.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.ChangePasswordBTN.UseVisualStyleBackColor = false;
+            this.ChangePasswordBTN.Click += new System.EventHandler(this.ChangePasswordBTN_Click);
             // 
             // ManageProductBTN
             // 
@@ -163,6 +164,7 @@
             this.StockManagementBTN.Text = "Stock Management";
             this.StockManagementBTN.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.StockManagementBTN.UseVisualStyleBackColor = false;
+            this.StockManagementBTN.Click += new System.EventHandler(this.StockManagementBTN_Click);
             // 
             // OrderRecordBTN
             // 

@@ -30,29 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageBrand_Category));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CategoryNameComboTXT = new System.Windows.Forms.ComboBox();
             this.BrandNamesComboTXT = new System.Windows.Forms.ComboBox();
-            this.BrandNameTXT = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.CategoryNameTXT = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.BrandNameTXT = new System.Windows.Forms.TextBox();
             this.addCategoryBTN = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.addBrandBTN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.closeBTN = new System.Windows.Forms.Button();
             this.refreshBTN = new System.Windows.Forms.Button();
-            this.CategoryNameComboTXT = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.addBrandBTN = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.UpdateCategoryNameTXT = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.updateCategoryBTN = new System.Windows.Forms.Button();
             this.UpdateBrandNameTXT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.updateBrandBTN = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,6 +70,49 @@
             this.panel1.Size = new System.Drawing.Size(210, 185);
             this.panel1.TabIndex = 0;
             // 
+            // CategoryNameComboTXT
+            // 
+            this.CategoryNameComboTXT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CategoryNameComboTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryNameComboTXT.FormattingEnabled = true;
+            this.CategoryNameComboTXT.Location = new System.Drawing.Point(13, 103);
+            this.CategoryNameComboTXT.Name = "CategoryNameComboTXT";
+            this.CategoryNameComboTXT.Size = new System.Drawing.Size(178, 26);
+            this.CategoryNameComboTXT.TabIndex = 1;
+            // 
+            // BrandNamesComboTXT
+            // 
+            this.BrandNamesComboTXT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BrandNamesComboTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrandNamesComboTXT.FormattingEnabled = true;
+            this.BrandNamesComboTXT.Location = new System.Drawing.Point(13, 43);
+            this.BrandNamesComboTXT.Name = "BrandNamesComboTXT";
+            this.BrandNamesComboTXT.Size = new System.Drawing.Size(178, 26);
+            this.BrandNamesComboTXT.TabIndex = 0;
+            this.BrandNamesComboTXT.SelectedIndexChanged += new System.EventHandler(this.BrandNamesComboTXT_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 79);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 21);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Category List:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 21);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Brand List:";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -85,15 +128,13 @@
             this.panel2.Size = new System.Drawing.Size(310, 143);
             this.panel2.TabIndex = 0;
             // 
-            // label1
+            // CategoryNameTXT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Brand Names List";
+            this.CategoryNameTXT.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoryNameTXT.Location = new System.Drawing.Point(21, 103);
+            this.CategoryNameTXT.Name = "CategoryNameTXT";
+            this.CategoryNameTXT.Size = new System.Drawing.Size(229, 27);
+            this.CategoryNameTXT.TabIndex = 2;
             // 
             // label2
             // 
@@ -104,44 +145,6 @@
             this.label2.Size = new System.Drawing.Size(201, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Add New Brand/Category";
-            // 
-            // BrandNamesComboTXT
-            // 
-            this.BrandNamesComboTXT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BrandNamesComboTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrandNamesComboTXT.FormattingEnabled = true;
-            this.BrandNamesComboTXT.Location = new System.Drawing.Point(13, 43);
-            this.BrandNamesComboTXT.Name = "BrandNamesComboTXT";
-            this.BrandNamesComboTXT.Size = new System.Drawing.Size(178, 26);
-            this.BrandNamesComboTXT.TabIndex = 1;
-            this.BrandNamesComboTXT.SelectedIndexChanged += new System.EventHandler(this.BrandNamesComboTXT_SelectedIndexChanged);
-            // 
-            // BrandNameTXT
-            // 
-            this.BrandNameTXT.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BrandNameTXT.Location = new System.Drawing.Point(21, 50);
-            this.BrandNameTXT.Name = "BrandNameTXT";
-            this.BrandNameTXT.Size = new System.Drawing.Size(229, 27);
-            this.BrandNameTXT.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(17, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 21);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Enter Brand Name:";
-            // 
-            // CategoryNameTXT
-            // 
-            this.CategoryNameTXT.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryNameTXT.Location = new System.Drawing.Point(21, 103);
-            this.CategoryNameTXT.Name = "CategoryNameTXT";
-            this.CategoryNameTXT.Size = new System.Drawing.Size(229, 27);
-            this.CategoryNameTXT.TabIndex = 6;
             // 
             // label5
             // 
@@ -154,6 +157,14 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Enter Category Name:";
             // 
+            // BrandNameTXT
+            // 
+            this.BrandNameTXT.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BrandNameTXT.Location = new System.Drawing.Point(21, 50);
+            this.BrandNameTXT.Name = "BrandNameTXT";
+            this.BrandNameTXT.Size = new System.Drawing.Size(229, 27);
+            this.BrandNameTXT.TabIndex = 0;
+            // 
             // addCategoryBTN
             // 
             this.addCategoryBTN.BackColor = System.Drawing.Color.Transparent;
@@ -164,9 +175,44 @@
             this.addCategoryBTN.Location = new System.Drawing.Point(256, 97);
             this.addCategoryBTN.Name = "addCategoryBTN";
             this.addCategoryBTN.Size = new System.Drawing.Size(38, 38);
-            this.addCategoryBTN.TabIndex = 5;
+            this.addCategoryBTN.TabIndex = 3;
             this.addCategoryBTN.UseVisualStyleBackColor = false;
             this.addCategoryBTN.Click += new System.EventHandler(this.addCategoryBTN_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(17, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 21);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Enter Brand Name:";
+            // 
+            // addBrandBTN
+            // 
+            this.addBrandBTN.BackColor = System.Drawing.Color.Transparent;
+            this.addBrandBTN.BackgroundImage = global::PointOFSale_Software.Properties.Resources.enter_64px;
+            this.addBrandBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.addBrandBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBrandBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.addBrandBTN.Location = new System.Drawing.Point(256, 43);
+            this.addBrandBTN.Name = "addBrandBTN";
+            this.addBrandBTN.Size = new System.Drawing.Size(38, 38);
+            this.addBrandBTN.TabIndex = 1;
+            this.addBrandBTN.UseVisualStyleBackColor = false;
+            this.addBrandBTN.Click += new System.EventHandler(this.addBrandBTN_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(34, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Names List";
             // 
             // closeBTN
             // 
@@ -176,7 +222,7 @@
             this.closeBTN.Location = new System.Drawing.Point(23, 311);
             this.closeBTN.Name = "closeBTN";
             this.closeBTN.Size = new System.Drawing.Size(210, 47);
-            this.closeBTN.TabIndex = 2;
+            this.closeBTN.TabIndex = 1;
             this.closeBTN.Text = "Close";
             this.closeBTN.UseVisualStyleBackColor = false;
             this.closeBTN.Click += new System.EventHandler(this.closeBTN_Click);
@@ -189,56 +235,10 @@
             this.refreshBTN.Location = new System.Drawing.Point(23, 263);
             this.refreshBTN.Name = "refreshBTN";
             this.refreshBTN.Size = new System.Drawing.Size(210, 47);
-            this.refreshBTN.TabIndex = 2;
+            this.refreshBTN.TabIndex = 0;
             this.refreshBTN.Text = "Refresh";
             this.refreshBTN.UseVisualStyleBackColor = false;
             this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click);
-            // 
-            // CategoryNameComboTXT
-            // 
-            this.CategoryNameComboTXT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CategoryNameComboTXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CategoryNameComboTXT.FormattingEnabled = true;
-            this.CategoryNameComboTXT.Location = new System.Drawing.Point(13, 103);
-            this.CategoryNameComboTXT.Name = "CategoryNameComboTXT";
-            this.CategoryNameComboTXT.Size = new System.Drawing.Size(178, 26);
-            this.CategoryNameComboTXT.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Brand List:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 21);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Category List:";
-            // 
-            // addBrandBTN
-            // 
-            this.addBrandBTN.BackColor = System.Drawing.Color.Transparent;
-            this.addBrandBTN.BackgroundImage = global::PointOFSale_Software.Properties.Resources.enter_64px;
-            this.addBrandBTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.addBrandBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addBrandBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addBrandBTN.Location = new System.Drawing.Point(256, 43);
-            this.addBrandBTN.Name = "addBrandBTN";
-            this.addBrandBTN.Size = new System.Drawing.Size(38, 38);
-            this.addBrandBTN.TabIndex = 2;
-            this.addBrandBTN.UseVisualStyleBackColor = false;
-            this.addBrandBTN.Click += new System.EventHandler(this.addBrandBTN_Click);
             // 
             // panel3
             // 
@@ -261,7 +261,17 @@
             this.UpdateCategoryNameTXT.Location = new System.Drawing.Point(21, 103);
             this.UpdateCategoryNameTXT.Name = "UpdateCategoryNameTXT";
             this.UpdateCategoryNameTXT.Size = new System.Drawing.Size(229, 27);
-            this.UpdateCategoryNameTXT.TabIndex = 12;
+            this.UpdateCategoryNameTXT.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(63, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(185, 21);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Update Brand/Category";
             // 
             // label8
             // 
@@ -284,7 +294,7 @@
             this.updateCategoryBTN.Location = new System.Drawing.Point(256, 97);
             this.updateCategoryBTN.Name = "updateCategoryBTN";
             this.updateCategoryBTN.Size = new System.Drawing.Size(38, 38);
-            this.updateCategoryBTN.TabIndex = 11;
+            this.updateCategoryBTN.TabIndex = 3;
             this.updateCategoryBTN.UseVisualStyleBackColor = false;
             this.updateCategoryBTN.Click += new System.EventHandler(this.updateCategoryBTN_Click);
             // 
@@ -294,7 +304,7 @@
             this.UpdateBrandNameTXT.Location = new System.Drawing.Point(21, 51);
             this.UpdateBrandNameTXT.Name = "UpdateBrandNameTXT";
             this.UpdateBrandNameTXT.Size = new System.Drawing.Size(229, 27);
-            this.UpdateBrandNameTXT.TabIndex = 9;
+            this.UpdateBrandNameTXT.TabIndex = 0;
             // 
             // label7
             // 
@@ -317,19 +327,9 @@
             this.updateBrandBTN.Location = new System.Drawing.Point(256, 44);
             this.updateBrandBTN.Name = "updateBrandBTN";
             this.updateBrandBTN.Size = new System.Drawing.Size(38, 38);
-            this.updateBrandBTN.TabIndex = 8;
+            this.updateBrandBTN.TabIndex = 1;
             this.updateBrandBTN.UseVisualStyleBackColor = false;
             this.updateBrandBTN.Click += new System.EventHandler(this.updateBrandBTN_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(63, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(185, 21);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Update Brand/Category";
             // 
             // ManageBrand_Category
             // 

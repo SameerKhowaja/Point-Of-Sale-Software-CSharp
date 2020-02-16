@@ -15,6 +15,8 @@ namespace PointOFSale_Software
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
+        string conString = ApplicationSetting.ConnectionString();
+
         public LoginForm()
         {
             InitializeComponent();
@@ -29,7 +31,6 @@ namespace PointOFSale_Software
         {
             if (IsValid())
             {
-                string conString = ApplicationSetting.ConnectionString();
                 //MessageBox.Show(conString);
                 using (SqlConnection con = new SqlConnection(conString))
                 {
@@ -66,10 +67,10 @@ namespace PointOFSale_Software
                         else
                         {
                             //Change when done
-                            this.Hide();
-                            DashboardForm dbf = new DashboardForm();
-                            dbf.Show();
-                            //MessageBox.Show("UserName or Password is Incorrect", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //this.Hide();
+                            //DashboardForm dbf = new DashboardForm();
+                            //dbf.Show();
+                            MessageBox.Show("UserName or Password is Incorrect", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
