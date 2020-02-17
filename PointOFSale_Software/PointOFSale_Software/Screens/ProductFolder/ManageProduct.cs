@@ -82,16 +82,11 @@ namespace PointOFSale_Software.Screens.ProductFolder
             }
         }
 
-        private void SearchTXT_TextChanged(object sender, EventArgs e){}
-
-        private void SearchTXT_KeyPress(object sender, KeyPressEventArgs e)
+        private void SearchTXT_TextChanged(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)13)
-            {
-                DataView dv = dt.DefaultView;
-                dv.RowFilter = string.Format("ProductName like '%{0}%'", SearchTXT.Text);
-                ProductGridView.DataSource = dv.ToTable();
-            }
+            DataView dv = dt.DefaultView;
+            dv.RowFilter = string.Format("ProductName like '%{0}%' or BrandName like '%{0}%' or CategoryName like '%{0}%'", SearchTXT.Text);
+            ProductGridView.DataSource = dv.ToTable();
         }
 
         private void ProductGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -101,7 +96,6 @@ namespace PointOFSale_Software.Screens.ProductFolder
                 DataGridViewRow row = ProductGridView.Rows[e.RowIndex];
 
                 ProductIDTXT.Text = row.Cells["ProductID"].Value.ToString();
-                DateANDTimeTXT.Text = row.Cells["DateANDTime"].Value.ToString();
 
                 int ProductIDINT = int.Parse(ProductIDTXT.Text);
                 string Query = "SELECT * FROM dbo.ProductsDefinition WHERE ProductID ='" + ProductIDINT + "'";
@@ -214,6 +208,8 @@ namespace PointOFSale_Software.Screens.ProductFolder
             BrandNameComboTxt.Text = "";
             CategoryComboTXT.Text = "";
             CategoryComboTXT.Items.Clear();
+            BrandNameComboTxt.Items.Clear();
+            BrandComboBoxUpdate();
             QuantityTXT.Text = "";
             PurchasePriceTXT.Text = "";
             SellingPriceTXT.Text = "";
@@ -225,25 +221,29 @@ namespace PointOFSale_Software.Screens.ProductFolder
 
         private void DeleteBTN_Click(object sender, EventArgs e)
         {
-            if(ProductIDTXT.Text != null && ProductIDTXT.Text != "")
+            if (ProductIDTXT.Text != null && ProductIDTXT.Text != "")
             {
-                string Query = "DELETE FROM dbo.ProductsDefinition WHERE ProductID='" + int.Parse(ProductIDTXT.Text) + "'";
-                using (SqlConnection con = new SqlConnection(conString))
+                DialogResult dialogResult = MessageBox.Show("Delete Product?", "Sure", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    try
+                    string Query = "DELETE FROM dbo.ProductsDefinition WHERE ProductID='" + int.Parse(ProductIDTXT.Text) + "'";
+                    using (SqlConnection con = new SqlConnection(conString))
                     {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand(Query, con);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Product Deleted");
-                        RefreshGridView();
-                        ClearTXTBoxes();
-                        con.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error: " + ex);
-                        con.Close();
+                        try
+                        {
+                            con.Open();
+                            SqlCommand cmd = new SqlCommand(Query, con);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Product Deleted");
+                            RefreshGridView();
+                            ClearTXTBoxes();
+                            con.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex);
+                            con.Close();
+                        }
                     }
                 }
             }
@@ -279,7 +279,7 @@ namespace PointOFSale_Software.Screens.ProductFolder
                 float Pprice = float.Parse(PurchasePriceTXT.Text);
                 float Sprice = float.Parse(SellingPriceTXT.Text);
                 string Desc = DescriptionTXT.Text;
-                string DT = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+                string DT = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
                 byte[] img = imageToByteArray(ProductImageBox.Image);
 
                 

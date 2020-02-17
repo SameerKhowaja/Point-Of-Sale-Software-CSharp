@@ -22,7 +22,7 @@ namespace PointOFSale_Software.Screens.ProductFolder
             InitializeComponent();
         }
 
-        private void DefineProductScreen_Load(object sender, EventArgs e)
+        private void LoadBrandComboBox()
         {
             string Query = "SELECT * FROM dbo.BrandInformation";
             using (SqlConnection con = new SqlConnection(conString))
@@ -45,6 +45,11 @@ namespace PointOFSale_Software.Screens.ProductFolder
                     con.Close();
                 }
             }
+        }
+
+        private void DefineProductScreen_Load(object sender, EventArgs e)
+        {
+            LoadBrandComboBox();
         }
 
         private string BrandID()
@@ -132,6 +137,8 @@ namespace PointOFSale_Software.Screens.ProductFolder
             SellingPriceTXT.Text = "";
             DescriptionTXT.Text = "";
             CategoryComboTXT.Items.Clear();
+            BrandNameComboTxt.Items.Clear();
+            LoadBrandComboBox();
             ProductImageBox.Image = Properties.Resources.image;
         }
 
@@ -142,7 +149,7 @@ namespace PointOFSale_Software.Screens.ProductFolder
 
         private string GetDateTime()
         {
-            string DateANDTime = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+            string DateANDTime = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
             return DateANDTime;
         }
 

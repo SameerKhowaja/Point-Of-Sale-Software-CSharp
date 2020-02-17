@@ -83,9 +83,49 @@ namespace PointOFSale_Software.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_user_group_woman_man_40px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_group_woman_man_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_user_male_100px {
+            get {
+                object obj = ResourceManager.GetObject("add_user_male_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap broom_40px {
+            get {
+                object obj = ResourceManager.GetObject("broom_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clear_shopping_cart_100px {
             get {
                 object obj = ResourceManager.GetObject("clear_shopping_cart_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_40px {
+            get {
+                object obj = ResourceManager.GetObject("delete_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +176,16 @@ namespace PointOFSale_Software.Properties {
         internal static System.Drawing.Bitmap manager_100px {
             get {
                 object obj = ResourceManager.GetObject("manager_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paid_40px {
+            get {
+                object obj = ResourceManager.GetObject("paid_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -70,6 +70,7 @@
             this.ProductGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ProductGridView.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.ProductGridView.Location = new System.Drawing.Point(7, 63);
+            this.ProductGridView.MultiSelect = false;
             this.ProductGridView.Name = "ProductGridView";
             this.ProductGridView.ReadOnly = true;
             this.ProductGridView.Size = new System.Drawing.Size(668, 215);
@@ -84,7 +85,6 @@
             this.SearchTXT.Size = new System.Drawing.Size(376, 27);
             this.SearchTXT.TabIndex = 0;
             this.SearchTXT.TextChanged += new System.EventHandler(this.SearchTXT_TextChanged);
-            this.SearchTXT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchTXT_KeyPress);
             // 
             // label1
             // 
@@ -332,7 +332,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(189, 287);
+            this.label10.Location = new System.Drawing.Point(227, 287);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(149, 19);
             this.label10.TabIndex = 36;
@@ -341,10 +341,10 @@
             // DateANDTimeTXT
             // 
             this.DateANDTimeTXT.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateANDTimeTXT.Location = new System.Drawing.Point(342, 284);
+            this.DateANDTimeTXT.Location = new System.Drawing.Point(377, 284);
             this.DateANDTimeTXT.Name = "DateANDTimeTXT";
             this.DateANDTimeTXT.ReadOnly = true;
-            this.DateANDTimeTXT.Size = new System.Drawing.Size(333, 25);
+            this.DateANDTimeTXT.Size = new System.Drawing.Size(298, 25);
             this.DateANDTimeTXT.TabIndex = 1;
             // 
             // ManageProduct

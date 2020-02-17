@@ -67,10 +67,10 @@ namespace PointOFSale_Software
                         else
                         {
                             //Change when done
-                            //this.Hide();
-                            //DashboardForm dbf = new DashboardForm();
-                            //dbf.Show();
-                            MessageBox.Show("UserName or Password is Incorrect", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.Hide();
+                            DashboardForm dbf = new DashboardForm();
+                            dbf.Show();
+                            //MessageBox.Show("UserName or Password is Incorrect", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }

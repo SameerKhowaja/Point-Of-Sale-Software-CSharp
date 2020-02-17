@@ -51,5 +51,23 @@ namespace PointOFSale_Software.Screens
             ChangePassword chgpass = new ChangePassword();
             chgpass.Show();
         }
+
+        private void NewCustomerBTN_Click(object sender, EventArgs e)
+        {
+            NewCustomer nc = new NewCustomer();
+            nc.Show();
+        }
+
+        private void CustomerManagementBTN_Click(object sender, EventArgs e)
+        {
+            CustomerManagement cmg = new CustomerManagement();
+            cmg.Show();
+        }
+
+        private void AddNewSalesOrderBTN_Click(object sender, EventArgs e)
+        {
+            AddNewSalesOrder anso = new AddNewSalesOrder();
+            anso.Show();
+        }
     }
 }
