@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace PointOFSale_Software.Screens.ProductFolder
 {
@@ -27,7 +28,7 @@ namespace PointOFSale_Software.Screens.ProductFolder
         private static Random random = new Random();
         public string RandomString()
         {
-            int length = 10;
+            int length = 14;
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             return new string(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
@@ -241,14 +242,50 @@ namespace PointOFSale_Software.Screens.ProductFolder
 
         private void AddTOList()
         {
+            bool allowToAdd = true;
             if (productNameLabel.Text != "..." && productNameLabel.Text != "" && quantityTXT.Text != null && quantityTXT.Text != "0" && quantityTXT.Text != "")
             {
-                string[] row = { productIDLabel.Text, productNameLabel.Text.Trim(), priceLabel.Text.Trim(), quantityTXT.Text.Trim(), priceTotalLabel.Text.Trim() };
-                ListViewItem item = new ListViewItem(row);
-                CartListView.Items.Add(item);
-                quantityTXT.Text = "0";
-                //Total Calculating
-                Calculation();
+                string idTemp;
+                for (int i = 0; i < CartListView.Items.Count; i++)
+                {
+                    idTemp = CartListView.Items[i].SubItems[0].Text;
+
+                    if (productIDLabel.Text == idTemp.ToString())
+                    {
+                        float addQuantity = float.Parse(quantityTXT.Text);
+                        addQuantity += float.Parse(CartListView.Items[i].SubItems[3].Text);
+                        if(addQuantity <= float.Parse(quantityLeftLabel.Text))
+                        {
+                            CartListView.Items[i].SubItems[3].Text = addQuantity.ToString();
+                        }
+                        else
+                        {
+                            float Quan_Limit = float.Parse(quantityLeftLabel.Text) - float.Parse(CartListView.Items[i].SubItems[3].Text);
+                            MessageBox.Show("Quantity Limit (less than or equal to) : " + Quan_Limit, "You are Exceeding Limits");
+                        }
+
+                        float addPrice = float.Parse(priceTotalLabel.Text);
+                        addPrice += float.Parse(CartListView.Items[i].SubItems[4].Text);
+                        CartListView.Items[i].SubItems[4].Text = addPrice.ToString();
+
+                        quantityTXT.Text = "0";
+                        //Total Calculating
+                        Calculation();
+                        allowToAdd = false;
+                        break;
+                    }
+                }
+
+                if (CartListView.Items.Count == 0 || allowToAdd == true)
+                {
+                    string[] row = { productIDLabel.Text, productNameLabel.Text.Trim(), priceLabel.Text.Trim(), quantityTXT.Text.Trim(), priceTotalLabel.Text.Trim() };
+                    ListViewItem item = new ListViewItem(row);
+                    CartListView.Items.Add(item);
+                    quantityTXT.Text = "0";
+                    //Total Calculating
+                    Calculation();
+                }
+                
             }
             else
             {
@@ -275,7 +312,6 @@ namespace PointOFSale_Software.Screens.ProductFolder
         private void addProductBTN_Click(object sender, EventArgs e)
         {
             AddTOList();
-            
         }
 
         private void clearCartBTN_Click(object sender, EventArgs e)
@@ -291,5 +327,124 @@ namespace PointOFSale_Software.Screens.ProductFolder
             CartListView.Items.RemoveAt(CartListView.SelectedIndices[0]);
             Calculation();
         }
+
+        private void cashCheck_Click(object sender, EventArgs e)
+        {
+            if (CashRecievedTXT.Text != "0" && CashRecievedTXT.Text != null && amountTotalLabel.Text != "0" && float.Parse(CashRecievedTXT.Text) > float.Parse(amountTotalLabel.Text))
+            {
+                try
+                {
+                    float CashRecieved = float.Parse(CashRecievedTXT.Text);
+                    float TotalAmount = float.Parse(amountTotalLabel.Text);
+                    float returnCash = CashRecieved - TotalAmount;
+                    MessageBox.Show("Cash Return Amount : "+returnCash);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Invalid Cash Amount");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please Enter Recieved Cash Amount OR Add a Product OR Less Cash Recieved");
+            }
+
+        }
+
+        private string GetDateTime()
+        {
+            string DateANDTime = DateTime.Now.ToString("dddd, dd MMMM yyyy HH:mm:ss");
+            return DateANDTime;
+        }
+
+        private string getCustomerID()
+        {
+            string Cust_ID = CustomerNamesComboTXT.Text;
+            string newString = Regex.Replace(Cust_ID, "[a-z]", "");
+            newString = Regex.Replace(newString, "[A-Z]", "");
+            newString = Regex.Replace(newString, "[:]", "");
+            return newString;
+        }
+
+        private void AddOrderDetailsTo_Database()
+        {
+            string DateANDTime = GetDateTime();
+            string CustomerID_ = getCustomerID();
+
+            string Query = "INSERT INTO dbo.InvoiceDetails (InvoiceNumber, CustomerID, DistinctProducts, TotalQuantity, TotalAmount, CashRecieved, DateANDTime) VALUES('" + OrderID + "', '" + int.Parse(CustomerID_) + "', '" + int.Parse(distinctProductLabel.Text) + "', '" + float.Parse(quantityTotalLabel.Text) + "', '" + amountTotalLabel.Text + "', '" + CashRecievedTXT.Text + "', '" + DateANDTime + "')";
+            using (SqlConnection con = new SqlConnection(conString))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand(Query, con);
+                    SqlDataReader rdr;
+
+                    con.Open();
+                    rdr = cmd.ExecuteReader();
+                    while (rdr.Read()) { }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex);
+                    con.Close();
+                }
+            }
+        }
+
+        private void AddOrderProductDetailsTo_Database()
+        {
+            int arraySize = CartListView.Items.Count;
+            int[] product_ID = new int[arraySize];
+            float[] product_quantity = new float[arraySize];
+            float[] product_sellingPrice = new float[arraySize];
+
+            //Get From Cart ListView
+            for (int i=0; i<arraySize;i++)
+            {
+                product_ID[i] = int.Parse(CartListView.Items[i].SubItems[0].Text); //ID 0
+                product_sellingPrice[i] = float.Parse(CartListView.Items[i].SubItems[2].Text); //price 2
+                product_quantity[i] = float.Parse(CartListView.Items[i].SubItems[3].Text); //quantity 3
+            }
+
+            //Adding to DB
+            for (int i=0; i<arraySize;i++){
+                string Query = "INSERT INTO dbo.InvoiceProductDetails (InvoiceNumber, ProductID, Quantity, SellingPrice) VALUES('" + OrderID + "', '" + product_ID[i] + "', '" + product_quantity[i] + "', '" + product_sellingPrice[i] + "')";
+                using (SqlConnection con = new SqlConnection(conString))
+                {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand(Query, con);
+                        SqlDataReader rdr;
+
+                        con.Open();
+                        rdr = cmd.ExecuteReader();
+                        while (rdr.Read()) { }
+                        con.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex);
+                        con.Close();
+                    }
+                }
+            }
+        }
+
+        private void proceedBTN_Click(object sender, EventArgs e)
+        {
+            //Order to DB
+            if (CustomerNamesComboTXT.Text != "" && amountTotalLabel.Text != "0" && amountTotalLabel.Text != null && CashRecievedTXT.Text != "0" && CashRecievedTXT.Text != null && float.Parse(CashRecievedTXT.Text) > float.Parse(amountTotalLabel.Text))
+            {
+                AddOrderDetailsTo_Database();
+                AddOrderProductDetailsTo_Database();
+            }
+            else
+            {
+                MessageBox.Show("Something is Missing");
+            }
+        }
+
+        
     }
 }

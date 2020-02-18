@@ -33,8 +33,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.ProductDataGridView = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.SearchTXT = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
@@ -60,6 +58,11 @@
             this.clearCartBTN = new System.Windows.Forms.Button();
             this.deleteProductBTN = new System.Windows.Forms.Button();
             this.proceedBTN = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SearchTXT = new System.Windows.Forms.TextBox();
+            this.CashRecievedTXT = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cashCheck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ProductDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProductImageBox)).BeginInit();
@@ -113,25 +116,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Search:";
             // 
-            // SearchTXT
-            // 
-            this.SearchTXT.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchTXT.Location = new System.Drawing.Point(81, 118);
-            this.SearchTXT.Name = "SearchTXT";
-            this.SearchTXT.Size = new System.Drawing.Size(285, 27);
-            this.SearchTXT.TabIndex = 1;
-            this.SearchTXT.TextChanged += new System.EventHandler(this.SearchTXT_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 2);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Product Price:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -164,11 +148,12 @@
             // 
             // quantityTXT
             // 
-            this.quantityTXT.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTXT.Location = new System.Drawing.Point(84, 57);
+            this.quantityTXT.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantityTXT.Location = new System.Drawing.Point(84, 56);
             this.quantityTXT.Name = "quantityTXT";
-            this.quantityTXT.Size = new System.Drawing.Size(102, 27);
+            this.quantityTXT.Size = new System.Drawing.Size(102, 26);
             this.quantityTXT.TabIndex = 0;
+            this.quantityTXT.Text = "0";
             this.quantityTXT.TextChanged += new System.EventHandler(this.quantityTXT_TextChanged);
             // 
             // priceTotalLabel
@@ -186,9 +171,9 @@
             this.addProductBTN.BackColor = System.Drawing.Color.SteelBlue;
             this.addProductBTN.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addProductBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addProductBTN.Location = new System.Drawing.Point(7, 112);
+            this.addProductBTN.Location = new System.Drawing.Point(8, 112);
             this.addProductBTN.Name = "addProductBTN";
-            this.addProductBTN.Size = new System.Drawing.Size(210, 41);
+            this.addProductBTN.Size = new System.Drawing.Size(215, 41);
             this.addProductBTN.TabIndex = 1;
             this.addProductBTN.Text = "Add Product";
             this.addProductBTN.UseVisualStyleBackColor = false;
@@ -235,7 +220,7 @@
             // 
             this.productNameLabel.AutoSize = true;
             this.productNameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameLabel.Location = new System.Drawing.Point(256, 458);
+            this.productNameLabel.Location = new System.Drawing.Point(253, 459);
             this.productNameLabel.Name = "productNameLabel";
             this.productNameLabel.Size = new System.Drawing.Size(15, 19);
             this.productNameLabel.TabIndex = 5;
@@ -264,7 +249,7 @@
             // 
             this.productIDLabel.AutoSize = true;
             this.productIDLabel.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productIDLabel.Location = new System.Drawing.Point(256, 437);
+            this.productIDLabel.Location = new System.Drawing.Point(253, 438);
             this.productIDLabel.Name = "productIDLabel";
             this.productIDLabel.Size = new System.Drawing.Size(15, 19);
             this.productIDLabel.TabIndex = 5;
@@ -276,9 +261,9 @@
             this.refreshBTN.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refreshBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.refreshBTN.Image = global::PointOFSale_Software.Properties.Resources.synchronize_40px;
-            this.refreshBTN.Location = new System.Drawing.Point(319, 67);
+            this.refreshBTN.Location = new System.Drawing.Point(316, 67);
             this.refreshBTN.Name = "refreshBTN";
-            this.refreshBTN.Size = new System.Drawing.Size(47, 45);
+            this.refreshBTN.Size = new System.Drawing.Size(50, 47);
             this.refreshBTN.TabIndex = 1;
             this.refreshBTN.UseVisualStyleBackColor = false;
             this.refreshBTN.Click += new System.EventHandler(this.refreshBTN_Click);
@@ -291,7 +276,7 @@
             this.AddCustomerBTN.Image = global::PointOFSale_Software.Properties.Resources.add_user_group_woman_man_40px;
             this.AddCustomerBTN.Location = new System.Drawing.Point(266, 67);
             this.AddCustomerBTN.Name = "AddCustomerBTN";
-            this.AddCustomerBTN.Size = new System.Drawing.Size(47, 45);
+            this.AddCustomerBTN.Size = new System.Drawing.Size(50, 47);
             this.AddCustomerBTN.TabIndex = 1;
             this.AddCustomerBTN.UseVisualStyleBackColor = false;
             this.AddCustomerBTN.Click += new System.EventHandler(this.AddCustomerBTN_Click);
@@ -311,7 +296,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(447, 315);
+            this.label7.Location = new System.Drawing.Point(447, 309);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(173, 25);
             this.label7.TabIndex = 5;
@@ -321,7 +306,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(447, 347);
+            this.label8.Location = new System.Drawing.Point(447, 336);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 25);
             this.label8.TabIndex = 5;
@@ -330,10 +315,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(447, 379);
+            this.label9.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(447, 366);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 25);
+            this.label9.Size = new System.Drawing.Size(149, 26);
             this.label9.TabIndex = 5;
             this.label9.Text = "Total Amount:";
             // 
@@ -341,7 +326,7 @@
             // 
             this.distinctProductLabel.AutoSize = true;
             this.distinctProductLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.distinctProductLabel.Location = new System.Drawing.Point(620, 317);
+            this.distinctProductLabel.Location = new System.Drawing.Point(620, 311);
             this.distinctProductLabel.Name = "distinctProductLabel";
             this.distinctProductLabel.Size = new System.Drawing.Size(24, 25);
             this.distinctProductLabel.TabIndex = 5;
@@ -351,7 +336,7 @@
             // 
             this.quantityTotalLabel.AutoSize = true;
             this.quantityTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTotalLabel.Location = new System.Drawing.Point(620, 349);
+            this.quantityTotalLabel.Location = new System.Drawing.Point(620, 338);
             this.quantityTotalLabel.Name = "quantityTotalLabel";
             this.quantityTotalLabel.Size = new System.Drawing.Size(24, 25);
             this.quantityTotalLabel.TabIndex = 5;
@@ -360,17 +345,17 @@
             // amountTotalLabel
             // 
             this.amountTotalLabel.AutoSize = true;
-            this.amountTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountTotalLabel.Location = new System.Drawing.Point(620, 381);
+            this.amountTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountTotalLabel.Location = new System.Drawing.Point(620, 368);
             this.amountTotalLabel.Name = "amountTotalLabel";
-            this.amountTotalLabel.Size = new System.Drawing.Size(24, 25);
+            this.amountTotalLabel.Size = new System.Drawing.Size(25, 25);
             this.amountTotalLabel.TabIndex = 5;
             this.amountTotalLabel.Text = "0";
             // 
             // clearCartBTN
             // 
             this.clearCartBTN.Image = global::PointOFSale_Software.Properties.Resources.broom_40px;
-            this.clearCartBTN.Location = new System.Drawing.Point(372, 379);
+            this.clearCartBTN.Location = new System.Drawing.Point(372, 378);
             this.clearCartBTN.Name = "clearCartBTN";
             this.clearCartBTN.Size = new System.Drawing.Size(60, 61);
             this.clearCartBTN.TabIndex = 53;
@@ -393,7 +378,7 @@
             this.proceedBTN.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F);
             this.proceedBTN.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.proceedBTN.Image = global::PointOFSale_Software.Properties.Resources.paid_40px;
-            this.proceedBTN.Location = new System.Drawing.Point(527, 425);
+            this.proceedBTN.Location = new System.Drawing.Point(527, 427);
             this.proceedBTN.Name = "proceedBTN";
             this.proceedBTN.Size = new System.Drawing.Size(283, 50);
             this.proceedBTN.TabIndex = 55;
@@ -401,12 +386,67 @@
             this.proceedBTN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.proceedBTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.proceedBTN.UseVisualStyleBackColor = false;
+            this.proceedBTN.Click += new System.EventHandler(this.proceedBTN_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Product Price:";
+            // 
+            // SearchTXT
+            // 
+            this.SearchTXT.Font = new System.Drawing.Font("Microsoft Tai Le", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchTXT.Location = new System.Drawing.Point(81, 118);
+            this.SearchTXT.Name = "SearchTXT";
+            this.SearchTXT.Size = new System.Drawing.Size(285, 27);
+            this.SearchTXT.TabIndex = 1;
+            this.SearchTXT.TextChanged += new System.EventHandler(this.SearchTXT_TextChanged);
+            // 
+            // CashRecievedTXT
+            // 
+            this.CashRecievedTXT.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CashRecievedTXT.Location = new System.Drawing.Point(568, 399);
+            this.CashRecievedTXT.Name = "CashRecievedTXT";
+            this.CashRecievedTXT.Size = new System.Drawing.Size(163, 28);
+            this.CashRecievedTXT.TabIndex = 58;
+            this.CashRecievedTXT.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(450, 404);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(118, 20);
+            this.label10.TabIndex = 57;
+            this.label10.Text = "Cash Recieved:";
+            // 
+            // cashCheck
+            // 
+            this.cashCheck.BackColor = System.Drawing.Color.SteelBlue;
+            this.cashCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cashCheck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cashCheck.Location = new System.Drawing.Point(735, 399);
+            this.cashCheck.Name = "cashCheck";
+            this.cashCheck.Size = new System.Drawing.Size(75, 28);
+            this.cashCheck.TabIndex = 59;
+            this.cashCheck.Text = "CHECK";
+            this.cashCheck.UseVisualStyleBackColor = false;
+            this.cashCheck.Click += new System.EventHandler(this.cashCheck_Click);
             // 
             // AddNewSalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 484);
+            this.Controls.Add(this.cashCheck);
+            this.Controls.Add(this.CashRecievedTXT);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.proceedBTN);
             this.Controls.Add(this.deleteProductBTN);
             this.Controls.Add(this.clearCartBTN);
@@ -414,11 +454,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.productIDLabel);
+            this.Controls.Add(this.productNameLabel);
             this.Controls.Add(this.amountTotalLabel);
             this.Controls.Add(this.quantityTotalLabel);
             this.Controls.Add(this.distinctProductLabel);
-            this.Controls.Add(this.productIDLabel);
-            this.Controls.Add(this.productNameLabel);
             this.Controls.Add(this.refreshBTN);
             this.Controls.Add(this.AddCustomerBTN);
             this.Controls.Add(this.ProductImageBox);
@@ -452,8 +492,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView ProductDataGridView;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox SearchTXT;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label priceLabel;
@@ -479,5 +517,10 @@
         private System.Windows.Forms.Button clearCartBTN;
         private System.Windows.Forms.Button deleteProductBTN;
         private System.Windows.Forms.Button proceedBTN;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox SearchTXT;
+        private System.Windows.Forms.TextBox CashRecievedTXT;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button cashCheck;
     }
 }
