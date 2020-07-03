@@ -19,3 +19,24 @@ D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\Point
 D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.NewCustomer.resources
 D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.CustomerManagement.resources
 D:\WORKING ON PROJECTS\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.AddNewSalesOrder.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.exe.config
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.exe
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\PointOFSale_Software.pdb
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.Design.dll
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.dll
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\bin\Debug\MetroFramework.Fonts.dll
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.csprojResolveAssemblyReference.cache
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.DashboardForm.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.LoginForm.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Properties.Resources.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.AddNewSalesOrder.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.ChangePassword.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.CustomerManagement.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.DefineProductScreen.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.ManageBrand_Category.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.ManageProduct.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.NewCustomer.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.Screens.ProductFolder.StockManagement.resources
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.csproj.GenerateResource.Cache
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.exe
+D:\PROJECTS\Point-Of-Sale-Software-CSharp\PointOFSale_Software\PointOFSale_Software\obj\Debug\PointOFSale_Software.pdb
